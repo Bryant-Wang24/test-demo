@@ -1,18 +1,46 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div>
+    <input type="button" value="GET" @click="getJoke" />
+    <p>{{ joke }}</p>
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-
-@Component({
-  components: {
-    HelloWorld,
+<script>
+export default {
+  data() {
+    return {
+      joke: "一个好笑的笑话",
+    };
   },
-})
-export default class Home extends Vue {}
+  components: {},
+  methods: {
+    getJoke() {
+      this.$axios.get("https://autumnfish.cn/api/joke").then((res) => {
+        console.log(res.data);
+        this.joke = res.data;
+      });
+    },
+  },
+};
 </script>
+<style lang="scss" scoped>
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid red;
+  height: 400px;
+  width: 400px;
+  .test {
+    margin-left: 3%;
+    box-sizing: border-box;
+    width: 30%;
+    height: 100px;
+    border: 1px solid red;
+  }
+  .selected {
+    background: pink;
+  }
+}
+</style>
