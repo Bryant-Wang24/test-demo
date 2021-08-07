@@ -8,15 +8,26 @@ import App3 from "@/components/App3.vue";
 
 Vue.use(VueRouter);
 
+// const change = (route) => {
+//   return { name: route.query.say + "!" };
+// };
 const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Home",
+    // redirect:''
     component: Home,
   },
   {
+    path: "*",
+    component: Home,
+  },
+  {
+    // path: "/app1/:id",
     path: "/app1",
     // name: "App1",
+    props: (route) => ({ query: route.query.age }),
+    // props: { query: "react" },
     component: App1,
   },
   {
@@ -45,7 +56,7 @@ const routes: Array<RouteConfig> = [
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  // mode: "history",
   base: process.env.BASE_URL,
   routes,
 });
