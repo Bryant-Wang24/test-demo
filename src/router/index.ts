@@ -19,15 +19,8 @@ const routes: Array<RouteConfig> = [
     component: Home,
   },
   {
-    path: "*",
-    component: Home,
-  },
-  {
-    // path: "/app1/:id",
-    path: "/app1",
-    // name: "App1",
-    props: (route) => ({ query: route.query.age }),
-    // props: { query: "react" },
+    path: "/app1/:id",
+    name: "App1",
     component: App1,
   },
   {
