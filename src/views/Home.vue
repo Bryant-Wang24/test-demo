@@ -78,13 +78,17 @@ export default {
     },
     choose(index) {
       // console.log(index);
-      this.$router.push("/App1/10"); //字符串路径
-      this.$router.push({ path: "/App1/333" }); //带有路径的对象
-      this.$router.push({ name: "App1", params: { id: "10" } }); // 命名路由，路由配置时，需要 name 字段
+      // this.$router.push("/app1?name=kobe");  //直接拼接要传递的属性
+
       // this.$router.push({
       //   path: "/App1",
       //   query: { name: "kobe", age: "41", height: 198 },
-      // });
+      // }); //传递一个对象
+
+      this.$router.push({
+        name: "App1",
+        query: { name: "kobe" },
+      }); //使用路由配置里面name字段
     },
   },
 };

@@ -22,7 +22,7 @@ export default {
     },
   },
   created() {
-    console.log(this.$route.params.id); //获取传递的参数
+    console.log(this.$route.query); //获取传递的参数
     // this.id = this.$route.params.id;
     // this.aidou = this.$route.query;
     // console.log(this.aidou);
