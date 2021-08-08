@@ -77,18 +77,17 @@ export default {
       });
     },
     choose(index) {
+      this.$router.push("app1/10");
       // console.log(index);
       // this.$router.push("/app1?name=kobe");  //直接拼接要传递的属性
-
       // this.$router.push({
       //   path: "/App1",
       //   query: { name: "kobe", age: "41", height: 198 },
       // }); //传递一个对象
-
-      this.$router.push({
-        name: "App1",
-        query: { name: "kobe" },
-      }); //使用路由配置里面name字段
+      // this.$router.push({
+      //   name: "App1",
+      //   query: { name: "kobe" },
+      // }); //使用路由配置里面name字段
     },
   },
 };

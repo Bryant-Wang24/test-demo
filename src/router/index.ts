@@ -19,9 +19,10 @@ const routes: Array<RouteConfig> = [
     component: Home,
   },
   {
-    path: "/app1",
+    path: "/app1/:id",
     name: "App1",
     component: App1,
+    props: true,
   },
   {
     path: "/app2",

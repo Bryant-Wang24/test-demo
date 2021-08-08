@@ -4,7 +4,7 @@
     style="width: 100px; height: 100px; background: pink"
   >
     <button @click.once="clickEvent('in')">点击</button>
-    <h2>我爱你{{ query }}</h2>
+    <h2>我爱你{{ id }}</h2>
   </div>
 </template>
 <script lang="ts">
@@ -15,14 +15,15 @@ export default {
       aidou: {},
     };
   },
-  props: {
-    query: {
-      type: String,
-      default: "VUE",
-    },
-  },
-  created() {
-    console.log(this.$route.query); //获取传递的参数
+  // props: {
+  //   query: {
+  //     type: String,
+  //     default: "VUE",
+  //   },
+  // },
+  props: ["id"],
+  mounted() {
+    console.log(this.id); //获取传递的参数
     // this.id = this.$route.params.id;
     // this.aidou = this.$route.query;
     // console.log(this.aidou);
