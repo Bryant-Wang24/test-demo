@@ -19,14 +19,12 @@ const routes: Array<RouteConfig> = [
     component: Home,
   },
   {
-    path: "/app1",
+    path: "/app1/:name",
     name: "App1",
     component: App1,
-    props: {
-      name: "kobe",
-      age: "41",
-    },
+    props: (xx) => xx, //第一个xx代表的是$route.params,将 $route.params 所有的属性传到第一个xx
   },
+
   {
     path: "/app2",
     // name: "App2",

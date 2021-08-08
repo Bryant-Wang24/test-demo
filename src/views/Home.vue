@@ -77,7 +77,7 @@ export default {
       });
     },
     choose(index) {
-      this.$router.push("app1");
+      this.$router.push("/app1/kobe");
       // console.log(index);
       // this.$router.push("/app1?name=kobe");  //直接拼接要传递的属性
       // this.$router.push({
