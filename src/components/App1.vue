@@ -4,7 +4,7 @@
     style="width: 100px; height: 100px; background: pink"
   >
     <button @click.once="clickEvent('in')">点击</button>
-    <h2>我爱你{{ id }}</h2>
+    <h2>我爱你{{ name }}{{ age }}</h2>
   </div>
 </template>
 <script lang="ts">
@@ -21,9 +21,9 @@ export default {
   //     default: "VUE",
   //   },
   // },
-  props: ["id"],
+  props: ["name", "age"],
   mounted() {
-    console.log(this.id); //获取传递的参数
+    console.log(this.name, this.age); //获取传递的参数
     // this.id = this.$route.params.id;
     // this.aidou = this.$route.query;
     // console.log(this.aidou);
