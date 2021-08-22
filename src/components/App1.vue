@@ -5,6 +5,8 @@
   >
     <button @click.once="clickEvent('in')">点击</button>
     <h2>我爱你{{ params.name }}</h2>
+    <div id="div" @click="copyContent">日日思君不见君</div>
+    <textarea id="textarea" readonly="readonly" />
   </div>
 </template>
 <script lang="ts">
@@ -29,6 +31,13 @@ export default {
     // console.log(this.aidou);
   },
   methods: {
+    copyContent() {
+      const text = document.getElementById("div").innerText;
+      document.getElementById("textarea").value = text;
+      const textarea = document.querySelector("#textarea");
+      textarea.select();
+      document.execCommand("copy");
+    },
     clickEvent(e: any) {
       console.log(e);
       //不加 once 每次点击按钮都会输出 in  out
@@ -49,5 +58,13 @@ export default {
   background: red;
   width: 200px;
   height: 200px;
+}
+#textarea {
+  border: 1px solid red;
+  position: absolute;
+  top: 0;
+  left: -1000px;
+  opacity: 0;
+  z-index: -1000;
 }
 </style>
